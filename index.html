@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="space.css" />
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <div class="body">
+      <img id="image" />
+      <p id="description"></p>
+    </div>
+  </body>
+
+  <script>
+    const image = document.getElementById("image");
+
+    const url =
+      "https://api.nasa.gov/planetary/apod?api_key=iWEMx43wAafP2zkRoLTFp96DQpgWL7n3TNQjT8vV";
+
+    fetch(url)
+      .then((resp) => resp.json())
+      .then(function (data) {
+        let space = data.url;
+        document.getElementById("image").src = space;
+        let details = data.explanation;
+        document.getElementById("description").innerHTML = details;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  </script>
+</html>

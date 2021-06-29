@@ -1,0 +1,12 @@
+img {
+  height: 50vh;
+  margin: 40px;
+}
+
+.body {
+  display: flex;
+}
+
+#description {
+  margin: 40px;
+}
